@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -11,6 +12,7 @@ public class TestBoxTests {
 //    https://demoqa.com/text-box
     @Test
     void fillFormTest() {
+        Configuration.timeout = 100000;
         open("https://demoqa.com/text-box");
 
         $("#userName").shouldBe(visible).setValue("Alexei Egorov");
@@ -26,6 +28,7 @@ public class TestBoxTests {
 
     @Test
     void fillAnotherFormTest() {
+        Configuration.timeout = 100000;
         open("https://demoqa.com/automation-practice-form");
 
         $("#firstName").setValue("Georgiy");
